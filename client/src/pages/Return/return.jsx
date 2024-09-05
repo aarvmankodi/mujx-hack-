@@ -23,10 +23,22 @@ const Return = () => {
     labels: ['New', 'Once returned', 'Twice returned' , 'Thrice returned'],  // Labels for each slice
     datasets: [
       {
-        label: 'prices',
+        label: 'return type',
         data: [6, 4, 2 , 1],  // Data values for each slice
         backgroundColor: ['orange', 'green', 'blue' , 'red'],  // Slice colors
         hoverBackgroundColor: ['orange', 'green', 'blue' , 'red'],  // Hover colors
+      },
+    ],
+  };
+
+  const Frequencydata = {
+    labels: ['Kept', 'Returned'],  // Labels for each slice
+    datasets: [
+      {
+        label: 'returned frequency',
+        data: [10,15],  // Data values for each slice
+        backgroundColor: ['blue' , 'red'],  // Slice colors
+        hoverBackgroundColor: ['blue' , 'red'],  // Hover colors
       },
     ],
   };
@@ -36,6 +48,7 @@ const Return = () => {
     <div className="return">
       <div className='graph-ret'>Rate of returned items (Monthly)<Line data={graphdata} /></div>
       <div className='pie-ret '>Type of returned product<Pie data={data} /></div>
+      <div className='pie-ret-2'>Product return frequency<Pie data={Frequencydata} /></div>
       <p className='return-pol'>
       Per return policy:<br/>
         1st return:<br/>

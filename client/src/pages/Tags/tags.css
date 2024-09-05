@@ -1,5 +1,67 @@
 .tags{
     height : 100vh;
-    width : 100vw;
-    background-color: blue;
+    width : 86vw;
+    padding-left : 14vw;
+    overflow : hidden;
+    display: flex;
+    justify-content: space-between;
+
 }
+
+.rightBar{
+    height : 100vh;
+    width : 17%;
+    background-color: blue;
+    /* position: absolute;
+    right : 0;
+    top : 0; */
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap : 0px;
+    padding-top : 1%;
+    font-size: 25px;
+    /* overflow: scroll; */
+}
+
+
+.circle1{
+    height : 190px;
+    width : 190px;
+    border-radius: 50%;
+    background-color: gold;
+}
+
+
+.circle2{
+    height : 190px;
+    width : 190px;
+    border-radius: 50%;
+    background-color: silver;
+}
+
+
+.circle3{
+    height : 190px;
+    width : 190px;
+    border-radius: 50%;
+    background-color: orangered;
+}
+
+.Tgs{
+    height : 100vh;
+    width :17%;
+    font-size: 23px;
+    
+    padding-top : 1%;
+    margin-left : 1%;
+    display: flex;
+    justify-content: center;
+    align-items:flex-start;
+    gap : 0px;
+    flex-wrap: wrap;
+    gap : 0px;
+
+}
+
+
