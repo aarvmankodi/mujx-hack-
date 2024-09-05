@@ -16,6 +16,7 @@ const Sidebar = () => {
     <div className="sidebar">
       
         <div className='item' onClick={() => handleNavigation('')}>DashBoard </div>
+        <div className='item' onClick={() => handleNavigation('purchases')}>Purchases </div>
         <div className='item' onClick={() => handleNavigation('physicalFactory')}>Physical Factory</div>
         <div className='item' onClick={() => handleNavigation('return')}>Returns</div>
         <div className='item' onClick={() => handleNavigation('tags')}>Tags</div>

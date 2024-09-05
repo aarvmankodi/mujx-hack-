@@ -1,0 +1,46 @@
+.physicalFactory{
+    height : 91vh;
+    width : 86vw;
+    padding-left : 14vw;
+}
+
+.top{
+    height : 47vh;
+    width : 86vw;  
+    border : 5px solid black;
+    border-top : none;
+    border-left : none;
+    border-right : none;
+    border-color: blueviolet;
+    display : flex;
+    justify-content: center;
+}
+
+.bar{
+    padding : 0;
+    width : 76vw;
+    height : 9vh;
+    padding-left : 37%;
+    padding-top : 2vh;
+    /* background-color: aquamarine; */
+    border : transparent;
+
+}
+
+.dropdowns{
+    height : 70%;
+    width : 40%;
+    background-color :#1a1a1a;
+    border : solid 2px white;
+    color : white;
+    font-size: larger;
+}
+
+.bottom{
+    height : 45vh;
+    width : 86vw;  
+    display : flex;
+    justify-content: center;
+    align-items: center;
+   
+}
