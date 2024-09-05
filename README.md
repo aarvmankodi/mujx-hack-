@@ -2,9 +2,9 @@
 
 ## Leader = Aryan Pahari<br>
 ## Other team members
-         Aarv Mankodi<br>
-         Sumit Kumar Singh<br>
-         Tushar Krishnia<br>
+         Aarv Mankodi
+         Sumit Kumar Singh
+         Tushar Krishnia
 
 Problem Statement : Enhancing Customer Interaction Management at Amazon (powered by SAY design)
 
