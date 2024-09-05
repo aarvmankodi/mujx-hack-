@@ -1,6 +1,7 @@
 # Trail Blazers team for muj HackX 2.0<br>
 
 ## Leader = Aryan Pahari<br>
+## Other team members
          Aarv Mankodi<br>
          Sumit Kumar Singh<br>
          Tushar Krishnia<br>
