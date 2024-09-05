@@ -6,6 +6,7 @@ import Tags from './pages/Tags/tags';
 import Return from './pages/Return/return';
 import PhysicalFactory from './pages/physicalFactory/physicalFactory';
 import Purchases from './pages/Purchases/purchases';
+import Dashboard from './pages/Dashboard/dashboard';
 
 function App() {
 
@@ -14,7 +15,7 @@ function App() {
     <div className="app">
       <Sidebar />
       <Routes>
-
+        <Route path = "/" element={<Dashboard/>}/>
         <Route path = "/physicalFactory" element={<PhysicalFactory/>}/>
         <Route path = "/return" element={<Return/>}/>
         <Route path = "/tags" element={<Tags/>}/>
