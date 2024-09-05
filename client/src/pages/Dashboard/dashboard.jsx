@@ -24,7 +24,7 @@ return (
             <td>Anom</td>
             <td>anom@gmail.com</td>
             <td>1234567890</td>
-            <td>Basic Bagde</td>
+            <td>Luxury Badge</td>
           </tr>
           <tr>
             <td>Megha</td>
