@@ -3,6 +3,7 @@ import {ApiError} from "../utils/ApiError.js"
 import { Admin} from "../models/admin.model.js"
 import { ApiResponse } from "../utils/ApiResponse.js";
 import { User } from "../models/user.model.js";
+import { Purchase } from "../models/purchase.model.js";
 import jwt from "jsonwebtoken"
 import mongoose from "mongoose";
 
@@ -221,8 +222,17 @@ const allUsersList = asyncHandler(async(req,res) => {
 })
 
 const getPurchaseData = asyncHandler(async(req,res) => {
-    const incomingUserData = req.cookies.username || req.body.username;
-    const user = await User.findOne({username: incomingUserData})
+    const userId = req.params.userId; //gets users Object id
+    const count=-500;
+    console.log(userId);
+    // const user = await User.findById(incomingUser);
+    console.log("Received");
+    const incomingPurchaseData = await Purchase.findOne({
+        $or: [{ userId }, { count }],
+    });
+    console.log(incomingPurchaseData);
+
+    return res.json(new ApiResponse(200, incomingPurchaseData, "Purchases sended successfully"))
 })
 
 export {
@@ -230,5 +240,6 @@ export {
     loginAdmin,
     logoutAdmin,
     refreshAccessToken,
-    allUsersList
+    allUsersList,
+    getPurchaseData,
 }
