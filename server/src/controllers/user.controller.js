@@ -2,6 +2,7 @@ import { asyncHandler } from "../utils/asyncHandler.js";
 import { ApiError } from "../utils/ApiError.js";
 import { User } from "../models/user.model.js";
 import { Admin } from "../models/admin.model.js";
+import { Return } from "../models/return.model.js";
 import { Purchase } from "../models/purchase.model.js";
 import { ApiResponse } from "../utils/ApiResponse.js";
 import jwt from "jsonwebtoken";
@@ -56,6 +57,7 @@ const registerUser = asyncHandler(async (req, res) => {
     email,
     password,
     username: username.toLowerCase(),
+    return:0,
   });
   //   console.log("HI")
   const createPurchases = await Purchase.create({
@@ -66,6 +68,12 @@ const registerUser = asyncHandler(async (req, res) => {
     count: -1,
     userId: user._id,
   });
+
+  const createReturnData= await Return.create({
+    countreturn:0,
+    productsreturn:[],
+    userId: user._id,
+  })
   //   console.log("Hello")
 
   const setPurchaseData = await User.findByIdAndUpdate(
@@ -73,6 +81,15 @@ const registerUser = asyncHandler(async (req, res) => {
     {
       $set: {
         purchaseData: createPurchases._id,
+      },
+    },
+    { new: true }
+  );
+  const setReturnData = await User.findByIdAndUpdate(
+    user._id,
+    {
+      $set: {
+        returnsData: createReturnData._id,
       },
     },
     { new: true }
@@ -242,7 +259,7 @@ const addPurchases = asyncHandler(async (req, res, next) => {
 
   const countincrease = await Purchase.findById(req.user.purchaseData);
   const countt = countincrease.count;
-  const userCount = await Purchase.findByIdAndUpdate(
+  await Purchase.findByIdAndUpdate(
     countincrease,
     {
       $set: {
@@ -266,10 +283,50 @@ const addPurchases = asyncHandler(async (req, res, next) => {
   res.status(200).json(new ApiResponse(200, userPurchase, "Purchases added"));
 });
 
+
+const returnData = asyncHandler(async (req, res, next) => {
+  const { productsreturn } = req.body;
+
+  
+
+  // console.log(month);
+
+  !productsreturn 
+    ? () => {
+        throw new ApiError(400, "All fields are required");
+      }
+    : null;
+  // continue with the rest of the code
+
+  const returnObject = await Return.findById(req.user.returnsData);
+  const countreturntt = returnObject.countreturn;
+  await Return.findByIdAndUpdate(
+    returnObject,
+    {
+      $set: {
+        countreturn : countreturntt+1,
+      },
+    },
+    { new: true }
+  );
+  const userpush = await Return.findByIdAndUpdate(
+    returnObject,
+    {
+      $push: {
+        productsreturn : productsreturn,
+      },
+    },
+    { new: true }
+  );
+  res.status(200).json(new ApiResponse(200, userpush, "Returned Successfully"));
+});
+
+
 export {
   registerUser,
   loginUser,
   logoutUser,
   refreshAccessToken,
   addPurchases,
+  returnData
 };

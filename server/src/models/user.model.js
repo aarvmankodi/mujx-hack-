@@ -35,6 +35,10 @@ const userSchema = new Schema(
     refreshToken: {
       type: String,
     },
+    returnsData:{
+      type: String,//stores objectId of Return schema
+      default: "No returns are there",
+    }
 
   },
   {
