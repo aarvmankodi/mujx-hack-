@@ -29,8 +29,8 @@ const userSchema = new Schema(
       required: [true, "Password is required"],
     },
     purchaseData:{
-      type: Schema.Types.ObjectId,
-      ref: "Purchase",
+      type: String,
+      default: "No purchase is available",
     },
     refreshToken: {
       type: String,

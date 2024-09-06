@@ -3,29 +3,32 @@ import mongoose, { Schema } from "mongoose";
 const purchaseSchema = new Schema(
   {
     userId: {
-      type: Schema.Types.ObjectId,
-      ref: "User",
+      type: String,
     },
-    month:{
-        type: number,
-        required: true,
-    },
-    // quantity: {
-    //   type: Number,
-    //   required: true,
-    // },
-    luxery: {
+    month: [
+      {
+        type: String,
+      },
+    ],
+    count: {
       type: Number,
-      required: true,
     },
-    high:{
-        type: Number,
-        required: true,
-    },
-    regular: {
-        type: Number,
-        required: true,
-    }
+
+    luxery: [
+      {
+        type: String,
+      },
+    ],
+    high: [
+      {
+        type: String,
+      },
+    ],
+    regular: [
+      {
+        type: String,
+      },
+    ],
   },
   {
     timestamps: true,

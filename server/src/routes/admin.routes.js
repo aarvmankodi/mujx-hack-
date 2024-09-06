@@ -7,7 +7,7 @@ import {
   registerAdmin,
   refreshAccessToken,
   allUsersList,
-  getPurchaseData
+  getPurchaseData,
 } from "../controllers/admin.controller.js";
 import { verifyJWT } from "../middlewares/adminauth.middleware.js";
 
@@ -16,8 +16,7 @@ router.route("/login").post(loginAdmin);
 
 router.route("/logout").post(verifyJWT, logoutAdmin);
 router.route("/refresh-token").post(refreshAccessToken);
-router.route("/alluserlist").get(verifyJWT,allUsersList);
-router.route("/get-purchase-data").get(verifyJWT , getPurchaseData);
-
+router.route("/alluserlist").get(verifyJWT, allUsersList);
+router.route("/alluserlist/get-purchase-data/:userId").get(verifyJWT, getPurchaseData);
 
 export default router;
