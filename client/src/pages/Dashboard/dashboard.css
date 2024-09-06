@@ -4,6 +4,7 @@
     padding-left : 14vw;
     overflow : hidden;
     
+    
 }
 
 .heading{
@@ -35,3 +36,4 @@ tr:hover{
     background-color: rgb(20,20,20);
     color : white;
 }
+
