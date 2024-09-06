@@ -1,39 +1,55 @@
 .dashboard{
     height : 100vh;
     width : 86vw;
-    padding-left : 14vw;
-    overflow : hidden;
-    
-    
+    margin-left : 14vw;
+    overflow: hidden;
 }
 
-.heading{
-    margin-left : 40%;
-    font-size: 40px;
-}
-
-.dashboard-table{
+.topBar{
     width : 100%;
-    height : 50vh;
+    height : 6%;
+    background-color: #1a1a1a;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding-top : 2px;
+    
 }
 
-td{
-    padding-left : 20px;
-    border : none;
-}
+.grid-container {
+    display: grid;
+    grid-template-columns: 2fr 1fr; /* First row divided into 2/3 and 1/3 */
+    grid-template-rows: 1fr 1fr;    /* Two rows of equal height */
+    gap: 5px;  /* 5px gap between the divs */
+    height: 100vh;  /* Full viewport height */
+  }
+  
+  .grid-item {
+    background :#1a1a1a;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);  /* Adds shadow to the div */
+    
+  }
 
-tr{
-   background-color: black;
-   border: none;
-}
+  .graph-line{
+    height : 80%;
+    width : 100%;
+  }
 
-th{
-    background-color: white;
-    color : black;
-}
+  .grid-item table{
+    position : absolute;
+    top : 0;
+    left : 1;
+    margin-top : 10%;
+    margin-left: 42%;
+    /* padding-left: 80%; */
+  }
 
-tr:hover{
-    background-color: rgb(20,20,20);
-    color : white;
-}
 
+
+  .grid-item .pie{
+    height : 10vh;
+    width : 10vw;
+  }
+
+
+  
